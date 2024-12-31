@@ -22,3 +22,19 @@ function OrderHeader() {
 	  const favoriteTextStyle = {
 		color: '#5F5F5F'              // Metin rengi
 	  };
+	  return (
+		<div className="OrderHeader" style={headerStyle}>
+		    {/* Banner görseli */}
+		    <img src={formBanner} alt="Pizza Banner" />
+		    
+		    {/* Favori pizza detayları */}
+		    <div className="favorite" style={favoriteStyle}>
+			  {/* Pizza başlığı ve fiyat bilgisi */}
+			  <div className="favorite-text">
+				<h5>Position Absolute Acı Pizza</h5>
+				<div className="mini-text">
+				    <p className="bold">85₺</p>
+				    <p>4.9</p>
+				    <p>(200)</p>
+				</div>
+			  </div>
