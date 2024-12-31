@@ -14,3 +14,11 @@ function OrderHeader() {
 	    margin: "0",                  // Marjin sıfırla
 	    width: "100%"                 // Genişlik %100
 	};
+	 const favoriteStyle = {
+		backgroundColor: "#FAF7F2",  // Favori bölümünün arka plan rengi
+		width: "50%",                 // Favori bölümünün genişliği
+	  };
+    
+	  const favoriteTextStyle = {
+		color: '#5F5F5F'              // Metin rengi
+	  };
