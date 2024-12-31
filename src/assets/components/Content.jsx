@@ -36,4 +36,31 @@ export default function Content() {
 				    <h1>Özel Lezzetus</h1>
 				    <h2>Position:Absolute Acı Burger</h2>
 				    <button onClick={handleClick} className="btn-card">SİPARİŞ VER</button>
-				</div>  
+				</div>   <div className="box box2">
+                        <h2>Hackathlon</h2>
+                        <h2>Burger Menü</h2>
+                        <button onClick={handleClick} className="btn-card">SİPARİŞ VER</button>
+                    </div>
+                    <div className="box box3">
+                        <h2>
+                            <span className="red">Çoooook</span> hızlı
+                        </h2>
+                        <h2>npm gibi kurye</h2>
+                        <button onClick={handleClick} className="btn-card">SİPARİŞ VER</button>
+                    </div></section>
+            </div>
+            <div className="container">
+                <div className="text-container">
+                    <h3>en çok paketlenen ürünler</h3>
+                    <h4>Acıktıran Kodlara Doyuran Lezzetler</h4>
+                </div>
+            </div>
+            <div className="container">
+                <section className="button-container">
+                    {Object.keys(foodIcons).map((food) => (
+                        <button key={food} className="btn-card">
+                            <img src={foodIcons[food]} alt={food} />
+                            <span className="btn-card-text">{food.charAt(0).toUpperCase() + food.slice(1)}</span>
+                        </button>
+                    ))}
+                </section>
