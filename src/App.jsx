@@ -8,6 +8,7 @@ import { BrowserRouter, Switch, Route, NavLink } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { puan } from "./Components/secenekler";
+import "./Components/Footer.jsx";
 function App() {
   const [formData, setFormData] = useState({
     fiyat: 85.5,
