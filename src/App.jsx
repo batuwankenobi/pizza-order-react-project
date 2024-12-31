@@ -7,7 +7,7 @@ import { Header } from "./Components/Header";
 import { BrowserRouter, Switch, Route, NavLink } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { puan } from "./components/secenekler";
+import { puan } from "./Components/secenekler";
 function App() {
   const [formData, setFormData] = useState({
     fiyat: 85.5,
