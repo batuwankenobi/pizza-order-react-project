@@ -1,18 +1,21 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+export default function Header () {
+    const history = useHistory();
 
-// Header bileşeni, uygulamanın üst kısmında gösterilen bir başlık oluşturur.
-export function Header() {
-  return (
-    <div className="flex-col"> {/* Header bileşenini kapsayan ana container */}
-      <div className="flex-col text-center barlow"> {/* Stil sınıflarını içeren alt container */}
-        <NavLink
-          to="/" // Ana sayfaya yönlendiren bağlantı
-          className={(isActive) => "header" + (!isActive ? "header" : "")} // Dinamik class tanımlaması
-        >
-          <h1>Teknolojik Yemekler</h1> {/* Başlık yazısı */}
-        </NavLink>
-      </div>
-    </div>
-  );
+    const handleRedirected = () => {
+        history.push("/order");
+    }
+    return (
+        <header>
+            <section className="header-container">
+                <div className="banner-container">
+                    <h2>fırsatı kaçırma</h2>
+                    <h1>KOD ACIKTIRIR</h1>
+                    <h1>PIZZA, DOYURUR</h1>
+                </div>
+                <button onClick={handleRedirected} className="btn">ACIKTIM</button>
+                
+            </section>
+        </header>
+    )
 }
