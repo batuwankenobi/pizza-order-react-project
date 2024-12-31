@@ -63,4 +63,23 @@ export default function Content() {
                             <span className="btn-card-text">{food.charAt(0).toUpperCase() + food.slice(1)}</span>
                         </button>
                     ))}
+                </section> </div>
+            <div className="container">
+                <section className="favorite-container">
+                    {favoriteFoods.map((food, index) => (
+                        <div className="favorite" key={index}>
+                            <img src={food.img} alt={food.title} />
+                            <div className="favorite-text">
+                                <h5>{food.title}</h5>
+                                <div className="mini-text">
+                                    <p>{food.rating}</p>
+                                    <p>({food.reviews})</p>
+                                    <p className="bold">{food.price}</p>                  </div>
+                            </div>
+                        </div>
+                    ))}
                 </section>
+            </div>
+        </main>
+    );
+}
