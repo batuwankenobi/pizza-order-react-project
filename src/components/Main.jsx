@@ -1,24 +1,17 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const Main = () => {
+export function Header() {
   return (
-    <div className="hero-section">
-      <div className="mt-m">
-        <p>fırsatı kaçırma</p>
-        <h2>
-          KOD ACIKTIRIR
-          <br />
-          PİZZA, DOYURUR
-        </h2>
-        <div className="flex-center mt-s">
-          <button>
-            <NavLink to="/siparisFormu">ACIKTIM</NavLink>
-          </button>
-        </div>
+    <div className="flex-col">
+      <div className=" flex-col text-center barlow">
+        <NavLink
+          to="/"
+          className={(isActive) => "header" + (!isActive ? "header" : "")}
+        >
+          <h1>Teknolojik Yemekler</h1>
+        </NavLink>
       </div>
     </div>
   );
-};
-
-export default Main;
+}

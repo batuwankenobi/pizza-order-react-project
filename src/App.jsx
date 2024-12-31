@@ -1,13 +1,13 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import SiparisFormu from "./components/siparisFormu";
-import Main from "./components/Main";
-import SiparisOnayi from "./components/SiparisOnayi";
-import { Header } from "./components/Header";
+import SiparisFormu from "./Components/siparisFormu";
+import Main from "./Components/Main";
+import SiparisOnayi from "./Components/SiparisOnayi";
+import { Header } from "./Components/Header";
 import { BrowserRouter, Switch, Route, NavLink } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { puan } from "./components/secenekler";
+import { puan } from "./Components/secenekler";
 function App() {
   const [formData, setFormData] = useState({
     fiyat: 85.5,
