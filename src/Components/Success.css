@@ -1,0 +1,83 @@
+.assent {
+    /* Arka plan rengini belirliyoruz ve flexbox düzeni ayarlıyoruz */
+    background-color: #CE2829;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.yellowText {
+    /* Sarı renkte metin için stil */
+    font-family: Satisfy;
+    font-size: 2rem;
+    color: #FDC913;
+}
+
+h1 {
+    /* Başlık için stil */
+    font-size: 2rem;
+    color: #FFFFFF;
+    line-height: 6rem;
+    font-family: Roboto Condensed;
+    font-weight: 400;
+}
+
+.horizontal-line {
+    /* Yatay çizgi için stil */
+    width: 70%;
+    height: 2px;
+    background-color: white;
+    margin: 1.25rem 0;
+}
+
+.pizzaName {
+    /* Pizza adı için stil */
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    font-family: Barlow;
+    font-weight: bold;
+}
+
+.order-detail {
+    /* Sipariş detayları için blok düzeni */
+    width: 14rem;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+}
+
+.order-detail p {
+    /* Sipariş detaylarındaki metin için stil */
+    font-family: Barlow;
+    font-size: 1rem;
+    color: #FFFFFF;
+}
+
+.payment {
+    /* Ödeme alanı için stil */
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #FFFFFF;
+    margin: 5rem auto;
+    padding: 2rem;
+    width: 22rem;
+    height: 13rem;
+    gap: 1rem;
+}
+
+.payment p {
+    /* Ödeme içeriğindeki metin için stil */
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.chooser,
+.totals {
+    /* Seçici ve toplamlar için yatay düzen */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #FFFFFF;
+}
