@@ -1,0 +1,57 @@
+/* Genel Form Alanı */
+
+.FormPizza {
+    background-color: white;
+    /* Formun arka planı beyaz */
+}
+
+
+/* Pizza Sipariş Formu Genel Stili */
+
+.form-pizza {
+    font-family: Barlow;
+    /* Yazı tipi Barlow */
+    max-width: 38rem;
+    /* Maksimum genişlik 38rem */
+    margin: 0 auto;
+    /* Ortalanmış form */
+    padding: 1.25rem;
+    /* İç boşluk */
+    background-color: white;
+    /* Beyaz arka plan */
+}
+
+
+/* İsim Alanı */
+
+.form-group-name {
+    margin-bottom: 1.5rem;
+    /* İsim alanının alt kısmında boşluk */
+}
+
+.form-group-name input[type="text"] {
+    background-color: #FAF7F2;
+    /* Açık bej arka plan */
+    width: 100%;
+    /* Tam genişlik */
+    padding: 0.625rem;
+    /* İç boşluk */
+    border: 0.063rem solid #ddd;
+    /* Hafif gri kenarlık */
+    border-radius: 0.313rem;
+    /* Yumuşak köşeler */
+    margin-bottom: 1.5rem;
+    /* Alanın alt kısmında boşluk */
+}
+
+
+/* Etiket Stili */
+
+label {
+    display: block;
+    /* Etiket blok elemanı */
+    font-weight: bold;
+    /* Kalın yazı tipi */
+    margin-bottom: 0.313rem;
+    /* Alt boşluk */
+}
