@@ -1,5 +1,4 @@
-/* Tüm elemanların ve pseudo-elemanların (before, after) box modelini border-box olarak ayarlıyoruz. 
-   Bu, padding ve border'ın elemanın toplam genişliğine dahil edilmesini sağlar. */
+/* Tüm elemanlar ve psuedo elemanlar için box-sizing: border-box uygulanıyor */
 
 *,
 *::before,
@@ -8,16 +7,14 @@
 }
 
 
-/* Tüm elemanların varsayılan margin değerlerini sıfırlıyoruz. 
-      Bu, tarayıcıların varsayılan stilinden kaynaklanan boşlukları ortadan kaldırır. */
+/* Tüm elemanlar için margin sıfırlanıyor */
 
 * {
     margin: 0;
 }
 
 
-/* Gövdeye satır yüksekliği ve yazı tipinin düzgün görünmesi için özellikler ekliyoruz. 
-      -webkit-font-smoothing, metinlerin daha keskin görünmesini sağlar. */
+/* Body için satır yüksekliği ve font smoothing ayarları yapılıyor */
 
 body {
     line-height: 1.5;
@@ -25,8 +22,7 @@ body {
 }
 
 
-/* Görseller ve diğer medya öğeleri için responsive davranış sağlıyoruz. 
-      Genişliklerini %100 ile sınırlayıp görüntü taşımasını engelliyoruz. */
+/* Görsellerin, videoların, canvas'ın ve SVG'lerin genişliği sınırlanıyor */
 
 img,
 picture,
@@ -38,7 +34,7 @@ svg {
 }
 
 
-/* Form elemanlarının yazı tipini genel yazı tipine uyumlu hale getiriyoruz. */
+/* Form elemanları (input, button, textarea, select) için font mirası alınıyor */
 
 input,
 button,
@@ -48,8 +44,7 @@ select {
 }
 
 
-/* Paragraf ve başlık elemanlarının metinlerini kırılabilir hale getiriyoruz. 
-      Böylece uzun metinler taşmadan yeni satıra geçer. */
+/* Başlık ve paragraf etiketlerinde kelimelerin satır sonunda taşmaması sağlanıyor */
 
 p,
 h1,
@@ -62,8 +57,7 @@ h6 {
 }
 
 
-/* Uygulamanın kök elementlerini izole ediyoruz. 
-      Bu, z-index gibi özelliklerin diğer elementlerden etkilenmesini engeller. */
+/* root ve next elemanları için izolasyon sağlanıyor */
 
 #root,
 #__next {
