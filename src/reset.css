@@ -1,0 +1,93 @@
+/* 1. Use a more-intuitive box-sizing model */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    /* Tüm elementlerde padding ve border'ı genişlik ve yükseklik hesaplamasına dahil et */
+}
+
+
+/* 2. Remove default margin */
+
+* {
+    margin: 0;
+    /* Tüm elementlerin varsayılan margin'ini sıfırlıyoruz */
+}
+
+body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* Okunabilirliği artırmak için satır yüksekliğini arttırıyoruz */
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+    /* Daha pürüzsüz metinler render etmek için */
+}
+
+
+/* 5. Improve media defaults */
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    /* Görsel elemanlar için block düzeni */
+    max-width: 100%;
+    /* Görsellerin kapsayıcı alanı taşmaması için genişliklerini sınırlıyoruz */
+}
+
+
+/* 6. Inherit fonts for form controls */
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    /* Form elemanlarında font özelliklerini kalıtsal olarak almasını sağlıyoruz */
+}
+
+
+/* 7. Avoid text overflows */
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+    /* Uzun kelimelerin satır sonunda taşmasını engelliyoruz */
+}
+
+
+/* 8. Improve line wrapping */
+
+p {
+    text-wrap: pretty;
+    /* Paragraflarda daha estetik bir satır sarma */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+    /* Başlıklar için dengelemeli satır sarma */
+}
+
+
+/*
+    9. Create a root stacking context
+*/
+
+#root,
+#__next {
+    isolation: isolate;
+    /* Stacking context izolasyonu, alt elementlerin sıralamasını kontrol eder */
+}
