@@ -1,1 +1,563 @@
-/*
+@import "./reset.css";
+
+/* Reset CSS dosyasını dahil et */
+
+
+/* Tüm elemanlara sıfırlama ve geçiş efekti ekleniyor */
+
+* {
+    padding: 0;
+    margin: 0;
+    transition: all 0.3s;
+    /* Tüm özelliklerde 0.3 saniyelik geçiş efekti */
+    /* border: 1px solid purple; */
+    /* Sınır eklemek için yorum satırında bırakılmış */
+    /* box-sizing: border-box; */
+    /* Box modelini border-box yaparak padding ve border'ı boyutlandırmaya dahil et */
+}
+
+
+/* HTML'in font büyüklüğü ayarlanıyor */
+
+html {
+    font-size: 16px;
+}
+
+
+/* Body stili ayarlanıyor, yazı tipi ve arka plan rengi belirleniyor */
+
+body {
+    font-family: 'Roboto Condensed', system-ui;
+    background-color: #FAF7F2;
+}
+
+
+/* Linklerin altı çizgisiz ve beyaz renkte olması sağlanıyor */
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+/* .container sınıfı için maksimum genişlik ve ortalamayı sağlıyor */
+
+.container {
+    max-width: 67rem;
+    margin: 0 auto;
+}
+
+
+/* .wrapper elemanının genişliği %100 olacak şekilde ayarlanıyor */
+
+.wrapper {
+    width: 100%;
+}
+
+
+/* Beyaz arka plan rengi */
+
+.bg-white {
+    background-color: white;
+}
+
+
+/* Bej rengi arka plan */
+
+.bg-bej {
+    background-color: #FAF7F2;
+}
+
+
+/* HEADER - Başlık kısmı ayarları */
+
+.header-container {
+    background: url(/images/iteration-1-images/home-banner.png);
+    /* Banner resmi arka plan olarak ekleniyor */
+    background-size: cover;
+    /* Resim boyutu kapsayıcı olacak şekilde ayarlanıyor */
+    background-position: center;
+    /* Resim ortalanıyor */
+    background-repeat: no-repeat;
+    /* Resmin tekrarı engelleniyor */
+    height: 100vh;
+    /* Yüksekliği viewport yüksekliği kadar */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+}
+
+
+/* Banner içindeki logo resmi ayarları */
+
+.header-container img {
+    width: 20rem;
+    height: auto;
+    margin: 3.5rem;
+}
+
+
+/* Banner container içeriği */
+
+.banner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+/* Başlıkların stil ayarları */
+
+.banner-container h2 {
+    color: #FDC913;
+    /* Sarı renk */
+    font-family: 'Satisfy', system-ui;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.banner-container h1 {
+    font-family: 'Roboto Condensed', system-ui;
+    font-weight: 300;
+    font-size: 5rem;
+    text-align: center;
+    color: white;
+    line-height: 5.5rem;
+}
+
+
+/* Buton stil ayarları */
+
+.btn {
+    font-family: 'Barlow', system-ui;
+    font-size: 1rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    background: #FDC913;
+    /* Sarı arka plan */
+    color: black;
+    font-weight: 600;
+    padding: 1rem 3rem;
+}
+
+
+/* Buton hover durumunda şeffaflık ekleniyor */
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+
+/* CATEGORY-BLOCK - Kategori bloğu ayarları */
+
+.category-block {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    background: white;
+    padding: 1.2rem 0;
+}
+
+
+/* Her bir öğenin düzeni */
+
+.block-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    padding: 0.5rem 1.3rem;
+    gap: 0.5rem;
+    clear: both;
+    align-items: center;
+}
+
+
+/* Blok öğesindeki resimlerin boyutu */
+
+.block-item img {
+    width: 2.6rem;
+    height: 2.6rem;
+}
+
+
+/* Blok öğesindeki yazı stili */
+
+.block-item p {
+    text-align: center;
+    font-family: 'Barlow', system-ui;
+    font-weight: 500;
+}
+
+
+/* MAIN - Ana içerik alanı ayarları */
+
+.main {
+    margin: 3rem 0;
+}
+
+
+/* Card container düzeni */
+
+.card-container {
+    display: grid;
+    gap: 0.75rem;
+    margin: 4.25rem 0;
+}
+
+
+/* Box öğeleri için stil ayarları */
+
+.box {
+    padding: 1.25rem;
+    color: #FAF7F2;
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* Box1'in arka planı */
+
+.box1 {
+    background: url(/images/iteration-2-images/cta/kart-1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    border-radius: 12px;
+}
+
+
+/* Box2'nin arka planı */
+
+.box2 {
+    background: url(/images/iteration-2-images/cta/kart-2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    grid-column: 2;
+    grid-row: 1;
+    border-radius: 12px;
+}
+
+
+/* Box3'ün arka planı */
+
+.box3 {
+    background: url(/images/iteration-2-images/cta/kart-3.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    grid-column: 2;
+    grid-row: 2;
+    color: #292929;
+    border-radius: 12px;
+}
+
+
+/* Box1 içindeki başlıklar */
+
+.box1 h1 {
+    font-family: Quattrocento;
+    font-size: 4.25rem;
+    font-weight: 700;
+    line-height: 4.5rem;
+    text-align: left;
+    color: white;
+}
+
+
+/* Box1 içindeki açıklama */
+
+.box1 h2 {
+    font-family: Barlow;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.7rem;
+    text-align: left;
+    color: white;
+}
+
+
+/* Box2 içindeki açıklama */
+
+.box2 h2 {
+    font-family: Barlow;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 2.8rem;
+    text-align: left;
+    color: white;
+}
+
+
+/* Box3 içindeki açıklama */
+
+.box3 h3 {
+    font-family: Barlow;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 2.8rem;
+    text-align: left;
+    color: black;
+}
+
+
+/* Kırmızı renkli metin */
+
+.red {
+    color: #ce2829;
+}
+
+
+/* TEXT-CONTAINER - Metin container ayarları */
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Metin başlığı stil ayarları */
+
+.text-container h3 {
+    font-family: Satisfy;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 2.5rem;
+    text-align: center;
+    color: #ce2829;
+}
+
+
+/* Metin alt başlığı stil ayarları */
+
+.text-container h4 {
+    font-family: Barlow;
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 3.5 rem;
+    text-align: center;
+}
+
+
+/* BUTTON-CONTAINER - Buton container düzeni */
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    margin: 2rem 0;
+    align-items: center;
+}
+
+
+/* Kart butonu stil ayarları */
+
+.btn-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 30px;
+    cursor: pointer;
+    background: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    align-items: center;
+}
+
+
+/* Kart butonundaki metin stil ayarları */
+
+.btn-card-text {
+    font-family: Barlow;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 2rem;
+    margin-left: 10px;
+    text-align: center;
+    color: black;
+}
+
+
+/* Kart butonunun hover durumu */
+
+.btn-card:hover {
+    background: black;
+    color: white;
+}
+
+
+/* Kart butonundaki metin hover durumunda beyaz olur */
+
+.btn-card:hover .btn-card-text {
+    color: white;
+}
+
+
+/* FAVORITE-CONTAINER - Favoriler container ayarları */
+
+.favorite-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding: 2rem 0;
+}
+
+
+/* Favori öğesi stil ayarları */
+
+.favorite {
+    background: white;
+    width: 33%;
+    padding: 2rem;
+    gap: 0px;
+    border-radius: 12px;
+    justify-content: space-between;
+}
+
+
+/* Favori metin düzeni */
+
+.favorite-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+
+/* Favori metin altındaki küçük metin düzeni */
+
+.mini-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: Barlow;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.8rem;
+    text-align: left;
+    color: #5f5f5f;
+}
+
+
+/* Favori başlığı stil ayarları */
+
+h5 {
+    font-family: Barlow;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.8rem;
+    text-align: left;
+}
+
+
+/* Bold metin */
+
+.bold {
+    font-weight: bold;
+    color: #292929;
+}
+
+
+/* FOOTER - Alt alan stil ayarları */
+
+footer {
+    background: black;
+    width: 100%;
+}
+
+
+/* Footer container düzeni */
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 67rem;
+    margin: 0 auto;
+    color: white;
+    padding: 2rem 0;
+}
+
+
+/* Footer left kısmı */
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+}
+
+
+/* Info kısmındaki stil ayarları */
+
+.info {
+    display: flex;
+    flex-direction: row;
+}
+
+.info img {
+    width: 1.5rem;
+    height: 1.5rem;
+    gap: 0px;
+    opacity: 0px;
+}
+
+
+/* Logo başlığı ayarları */
+
+.footer-left h2 {
+    font-family: 'Roboto Condensed', system-ui;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 4rem;
+}
+
+
+/* Footer sağ kısmındaki sosyal medya linkleri düzeni */
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+
+/* Footer sağdaki sosyal medya linkleri */
+
+.footer-right div {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin: 0.5rem 0;
+}
+
+
+/* Footer sağdaki sosyal medya ikonları */
+
+.footer-right i {
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+
+/* Footer sağdaki sosyal medya ikonları hover durumunda */
+
+.footer-right i:hover {
+    color: #FDC913;
+}
