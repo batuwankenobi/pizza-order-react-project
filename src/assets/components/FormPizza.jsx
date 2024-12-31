@@ -39,4 +39,165 @@ export default function FormPizza() {
 		    : prevData.ingredients.filter((ingredient) => ingredient !== value);
 		  return { ...prevData, ingredients: updatedIngredients };
 		});
-	    };		    
+	    };		     const incrementQuantity = () => {
+		setData((prevData) => ({ ...prevData, quantity: prevData.quantity + 1 }));
+	    };
+	  
+	    const decrementQuantity = () => {
+		setData((prevData) => ({ ...prevData, quantity: Math.max(1, prevData.quantity - 1) }));
+	    };
+	  
+	    const choose = data.ingredients.length * 5 * data.quantity;
+	    const total = data.quantity * 85.5 + choose;
+	  
+	    const validateForm = (updatedData) => {
+		const errors = {};
+		if (updatedData.name.length < 3) {
+			errors.name = errorMessage.name;
+		    }
+		    if (!updatedData.size) {
+			errors.size = errorMessage.size;
+		    }
+		    if (!updatedData.dough) {
+			errors.dough = errorMessage.dough;
+		    }
+		    if (updatedData.ingredients.length < 5 || updatedData.ingredients.length > 8) {
+			errors.ingredients = errorMessage.ingredients;
+		    }
+		    setFormErrors(errors);
+		    setIsFormValid(Object.keys(errors).length === 0);
+		  };
+		
+		  useEffect(() => {
+		    validateForm(data);
+		  }, [data]);
+		
+		  const handleSubmit = (event) => {
+		    event.preventDefault();
+		    if (!isFormValid) {
+			toast.error('Lütfen tüm alanları doğru şekilde doldurun.');
+			return;
+		    }
+		    axios
+
+		// axios.post('https://reqres.in/api/pizza', data)
+		    .post('https://reqres.in/api/pizza', data)
+		    .then((response) => {
+			console.log('Sipariş Başarılı:', response.data);
+			history.push('/success', { orderData: response.data, formData: data });
+		    })
+		    .catch((error) => {
+			toast.error('Sipariş Hatası:', error);
+		    });
+		};
+	    
+		// Form component from reactstrap
+		return (
+		  <div className="FormPizza">
+			
+		    <Form onSubmit={handleSubmit} className="form-pizza">
+			<div className="form-group-name">
+			  <Label htmlFor="name">Pizza kim için hazırlanıyor?</Label>
+			  <Input
+			    type="text"
+			    name="name"
+			    id="name"
+			    value={data.name}
+			    placeholder="İsim Soyisim"
+			    onChange={handleInputChange}
+			    invalid={!!formErrors.name}
+			  />
+			  <FormFeedback>{formErrors.name}</FormFeedback>
+			</div>
+	    
+			*/ Radio buttons for size options */
+			<div className="row-size-dough">
+			  <div className="form-group size-options">
+			    <Label>Boyut Seçiniz</Label>
+			    <div className="row-size">
+				{['S', 'M', 'L'].map((size) => (
+				  <div key={size}>
+				    <Input
+					type="radio"
+					name="size"
+					value={size}
+					checked={data.size === size}
+					onChange={handleInputChange}
+				    />
+				    <Label>{size}</Label>
+				  </div>
+				))}
+			    </div>
+			    {formErrors.size && <FormFeedback>{formErrors.size}</FormFeedback>}
+			  </div>
+	    
+			  <div className="form-group-dough">
+			    <Label>Hamur Seçiniz</Label>
+			    <Input
+				type="select"
+				name="dough"
+				value={data.dough}
+				onChange={handleInputChange}
+			    >
+				<option value="">Hamur Kalınlığı</option>
+				{['Kalın', 'Orta', 'İnce', 'Süper İnce'].map((dough) => (
+				  <option key={dough} value={dough}>
+				    {dough}
+				  </option>
+				))}
+			    </Input>
+			    {formErrors.dough && <FormFeedback>{formErrors.dough}</FormFeedback>}
+			  </div>
+			</div>
+	    
+			<div className="form-group ingredient-options">
+			  <Label>Malzeme Seçiniz</Label>
+			  {['Pepperoni', 'Tavuk Izgara', 'Mısır', 'Sarımsak', 'Ananas'].map((ingredient) => (
+			    <div key={ingredient}>
+				<Input
+				  type="checkbox"
+				  name="ingredients"
+				  value={ingredient}
+				  checked={data.ingredients.includes(ingredient)}
+				  onChange={handleCheckboxChange}
+				/>
+				<Label>{ingredient}</Label>
+			    </div>
+			  ))}
+			  {formErrors.ingredients && <FormFeedback>{formErrors.ingredients}</FormFeedback>}
+			</div>
+	    
+			<div className="form-group-note">
+			  <Label htmlFor="note">Sipariş Notu</Label>
+			  <Input
+			    type="textarea"
+			    name="note"
+			    value={data.note}
+			    onChange={handleInputChange}
+			  />
+			</div>
+	    
+			<FormGroup className="price">
+			  <div className="form-group quantity">
+			    <button onClick={decrementQuantity}>-</button>
+			    <span>{data.quantity}</span>
+			    <button onClick={incrementQuantity}>+</button>
+			  </div>
+	    
+			  <div className="order-summary">
+			    <p>Seçimler:</p>
+			    <span>{choose}₺</span>
+			    <p>Toplam:</p>
+			    <span>{total}₺</span>
+	    
+			    <button type="submit" disabled={!isFormValid}>
+				Siparişi Tamamla
+			    </button>
+			  </div>
+			</FormGroup>
+		    </Form>
+		    <ToastContainer />
+		  </div>
+		);
+	    }
+							
