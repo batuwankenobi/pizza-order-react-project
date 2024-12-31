@@ -1,0 +1,465 @@
+/* Form Container */
+
+.FormPizza {
+    background-color: white;
+    /* Set background color to white */
+}
+
+
+/* Form Styling */
+
+.form-pizza {
+    font-family: Barlow;
+    /* Set font family */
+    max-width: 38rem;
+    /* Limit maximum width */
+    margin: 0 auto;
+    /* Center the form horizontally */
+    padding: 1.25rem;
+    /* Add padding inside the form */
+    background-color: white;
+    /* Set background color */
+}
+
+
+/* Name Field */
+
+.form-group-name {
+    margin-bottom: 1.5rem;
+    /* Add margin below the name field */
+}
+
+
+/* Name Input Field Styling */
+
+.form-group-name input[type="text"] {
+    background-color: #FAF7F2;
+    /* Light background color */
+    width: 100%;
+    /* Full width */
+    padding: 0.625rem;
+    /* Padding inside the input */
+    border: 0.063rem solid #ddd;
+    /* Border color */
+    border-radius: 0.313rem;
+    /* Rounded corners */
+    margin-bottom: 1.5rem;
+    /* Space below the input */
+}
+
+
+/* Label Styling */
+
+label {
+    display: block;
+    /* Block level label */
+    font-weight: bold;
+    /* Bold text */
+    margin-bottom: 0.313rem;
+    /* Space below the label */
+}
+
+
+/* Legend Styling */
+
+legend {
+    color: #5F5F5F;
+    /* Grey color for the legend */
+    font-size: 1rem;
+    /* Font size */
+}
+
+
+/* Label Span (Error Messages) */
+
+label span {
+    color: red;
+    /* Red color for error messages */
+}
+
+
+/* Size and Dough Row Styling */
+
+.row-size-dough {
+    display: flex;
+    /* Flexbox layout */
+    justify-content: space-between;
+    /* Space between items */
+    align-items: center;
+    /* Vertically center align */
+    margin-bottom: 1.5rem;
+    /* Space below the row */
+}
+
+
+/* Size Options Layout */
+
+.size-options {
+    display: flex;
+    /* Flexbox layout */
+    flex-direction: column;
+    /* Stack vertically */
+    gap: 0.625rem;
+    /* Space between items */
+}
+
+
+/* Size Options Text */
+
+.size-options p {
+    display: block;
+    /* Block level text */
+    font-weight: bold;
+    /* Bold text */
+    margin-bottom: 0.313rem;
+    /* Space below text */
+}
+
+
+/* Size Option Buttons Layout */
+
+.row-size {
+    display: flex;
+    /* Flexbox layout */
+}
+
+
+/* Size Option Label Styling */
+
+.size-options label {
+    display: flex;
+    /* Flexbox layout */
+    align-items: center;
+    /* Vertically center align */
+    justify-content: center;
+    /* Center the content */
+    padding: 0.625rem;
+    /* Padding inside the label */
+    border: 0.063rem solid #ddd;
+    /* Border around the label */
+    border-radius: 50%;
+    /* Circular shape */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    background: #FAF7F2;
+    /* Light background color */
+    width: 2.5rem;
+    /* Set width */
+    height: 2.5rem;
+    /* Set height */
+    margin-right: 0.625rem;
+    /* Space between options */
+}
+
+
+/* Hide Radio Button but Style Checked State */
+
+.size-options input[type="radio"] {
+    display: none;
+    /* Hide radio button */
+}
+
+
+/* Styling for Checked Radio Buttons */
+
+.size-options input[type="radio"]:checked+label {
+    background: #FFEECC;
+    /* Change background on checked */
+    border-color: #FFEECC;
+    /* Change border color */
+}
+
+
+/* Dough Selection Group */
+
+.form-group-dough {
+    display: flex;
+    /* Flexbox layout */
+    flex-direction: column;
+    /* Stack vertically */
+    justify-content: flex-start;
+    /* Align items at the start */
+    width: 50%;
+    /* Set width */
+}
+
+
+/* Ingredient Options Styling */
+
+.ingredient-options {
+    margin-bottom: 1.5rem;
+    /* Space below ingredient section */
+}
+
+
+/* Ingredient Label Styling */
+
+.ingredient-options label {
+    display: flex;
+    /* Flexbox layout */
+    align-items: center;
+    /* Vertically center align */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+}
+
+
+/* Ingredient Grid Layout */
+
+.ingredient-options-box {
+    display: grid;
+    /* Grid layout */
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 equal columns */
+    gap: 0.625rem;
+    /* Space between items */
+    background: white;
+    /* White background */
+    color: #FAF7F2;
+    /* Light text color */
+}
+
+
+/* Ingredient Text Styling */
+
+.ingredient-options p {
+    font-size: 1rem;
+    /* Set font size */
+    color: #5F5F5F;
+    /* Grey text color */
+}
+
+
+/* Ingredient Checkbox Row Layout */
+
+.row-ingredient {
+    display: flex;
+    /* Flexbox layout */
+    align-items: center;
+    /* Vertically center align */
+    gap: 0.625rem;
+    /* Space between items */
+}
+
+
+/* Ingredient Checkbox Styling */
+
+.row-ingredient input[type="checkbox"] {
+    appearance: none;
+    /* Remove default appearance */
+    width: 1.5rem;
+    /* Set width */
+    height: 1.5rem;
+    /* Set height */
+    background-color: #FAF7F2;
+    /* Light background color */
+    border: 0.125rem solid #ccc;
+    /* Border color */
+    border-radius: 0.188rem;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    position: relative;
+    /* Position for the checkmark */
+}
+
+
+/* Styling for Checked Ingredient Checkbox */
+
+.row-ingredient input[type="checkbox"]:checked {
+    background-color: #ffc107;
+    /* Change background color when checked */
+}
+
+
+/* Checkmark Styling for Checked Ingredient */
+
+.row-ingredient input[type="checkbox"]:checked::after {
+    content: '\2714';
+    /* Unicode character for checkmark */
+    position: absolute;
+    /* Absolute positioning */
+    bottom: 0.05rem;
+    /* Small bottom offset */
+    left: 0.2rem;
+    /* Small left offset */
+    font-size: 1rem;
+    /* Font size for the checkmark */
+    color: black;
+    /* Black color for the checkmark */
+}
+
+
+/* Ingredient Label Text */
+
+.ingredient-options label {
+    color: black;
+    /* Black color for the label text */
+}
+
+
+/* Order Notes Section */
+
+textarea {
+    width: 100%;
+    /* Full width */
+    height: 3.75rem;
+    /* Set height */
+    padding: 0.625rem;
+    /* Padding inside the textarea */
+    border: 0.063rem solid #ddd;
+    /* Border around the textarea */
+    border-radius: 0.313rem;
+    /* Rounded corners */
+    background-color: #FAF7F2;
+    /* Light background color */
+    margin-bottom: 1.5rem;
+    /* Space below the textarea */
+}
+
+
+/* Price Section Layout */
+
+.price {
+    display: flex;
+    /* Flexbox layout */
+    justify-content: space-between;
+    /* Space between items */
+    align-items: center;
+    /* Vertically center align */
+    gap: 1.25rem;
+    /* Space between items */
+    margin-top: 1.5rem;
+    /* Space above the price section */
+}
+
+
+/* Quantity Controls Layout */
+
+.quantity {
+    display: flex;
+    /* Flexbox layout */
+    flex-direction: row;
+    /* Row direction */
+    align-items: center;
+    /* Vertically center align */
+    justify-content: space-between;
+    /* Space between items */
+    border: 0.063rem solid #D9D9D9;
+    /* Border around the quantity section */
+    border-radius: 0.313rem;
+    /* Rounded corners */
+}
+
+
+/* Quantity Button Styling */
+
+.quantity button {
+    width: 2.5rem;
+    /* Set width */
+    height: 2.5rem;
+    /* Set height */
+    border: 0.063rem solid #D9D9D9;
+    /* Border color */
+    background: #ffc107;
+    /* Background color */
+    color: white;
+    /* Text color */
+    font-size: 1.125rem;
+    /* Font size */
+    border-radius: 0.313rem;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+}
+
+
+/* Quantity Display */
+
+.quantity span {
+    padding: 0 1.25rem;
+    /* Padding left and right */
+    font-size: 1.125rem;
+    /* Font size */
+}
+
+
+/* Order Summary Section */
+
+.order-summary {
+    flex: 1;
+    /* Take remaining space */
+    background: #FAF7F2;
+    /* Light background color */
+    padding: 2rem;
+    /* Padding inside the order summary */
+    border: 0.063rem solid #5F5F5F80;
+    /* Border color */
+    border-radius: 0.313rem;
+    /* Rounded corners */
+    min-height: 10rem;
+    /* Minimum height */
+}
+
+
+/* Order Summary Paragraphs */
+
+.order-summary p {
+    font-weight: bold;
+    /* Bold text */
+    margin-bottom: 0.625rem;
+    /* Space below each paragraph */
+}
+
+
+/* Order Summary Total Layout */
+
+.smmry-choose,
+.smmry-total {
+    display: flex;
+    /* Flexbox layout */
+    justify-content: space-between;
+    /* Space between items */
+}
+
+
+/* Total Price Styling */
+
+.smmry-total {
+    color: red;
+    /* Red color for the total price */
+}
+
+
+/* Submit Button Styling */
+
+.submit-button {
+    width: 100%;
+    /* Full width */
+    background: #ffc107;
+    /* Background color */
+    color: black;
+    /* Text color */
+    font-size: 1rem;
+    /* Font size */
+    padding: 0.625rem;
+    /* Padding inside the button */
+    border: none;
+    /* Remove border */
+    border-radius: 0.313rem;
+    /* Rounded corners */
+}
+
+
+/* Error Message Styling */
+
+.invalid-feedback {
+    display: block;
+    /* Show error message */
+    margin-top: 0.313rem;
+    /* Space above the error message */
+    font-size: 0.9rem;
+    /* Font size */
+    color: red;
+    /* Red color for error */
+}
