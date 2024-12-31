@@ -110,7 +110,7 @@ export default function FormPizza() {
 			  <FormFeedback>{formErrors.name}</FormFeedback>
 			</div>
 	    
-			*/ Radio buttons for size options */
+
 			<div className="row-size-dough">
 			  <div className="form-group size-options">
 			    <Label>Boyut Seçiniz</Label>
