@@ -1,90 +1,82 @@
-import { sizes, kalinlik, ekstralar, puan } from "./secenekler"; // Diğer seçenekleri içeren veriler
-import axios from "axios"; // HTTP istekleri için axios kütüphanesi
-import { useState, useEffect } from "react"; // React hookları
-import { toast } from "react-toastify"; // Toast mesajları
-import { useHistory } from "react-router-dom"; // Sayfa yönlendirmesi için history
-
+import { sizes, kalinlik, ekstralar, puan } from "./secenekler";
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { toast } from "react-toastify";
+import { useHistory } from "react-router-dom";
 function SiparisFormu({ formData, setFormData, count, setCount }) {
-  const [errors, setErrors] = useState({}); // Hata mesajlarını tutan durum
-  const [isValid, setIsValid] = useState(false); // Formun geçerliliğini tutan durum
-  const history = useHistory(); // Sayfa yönlendirme için kullanılır
-
-  // Formdaki inputların değişimlerini yöneten fonksiyon
+  const [errors, setErrors] = useState({});
+  const [isValid, setIsValid] = useState(false);
+  const history = useHistory();
   const handleChange = (event) => {
     const { name, value, type, checked } = event.target;
 
     setFormData((prevData) => {
       if (type === "checkbox") {
-        // Checkbox için eklenen veya çıkarılan malzemeler
         if (name === "npmHizindaTeslimat") {
           return {
             ...prevData,
             npmHizindaTeslimat: checked,
-            total: checked ? prevData.total + 50 : prevData.total - 50, // Acil teslimat için fiyat güncellemesi
+            total: checked ? prevData.total + 50 : prevData.total - 50,
           };
         } else {
           const updatedSecimler = checked
             ? [...prevData.secimler, value]
-            : prevData.secimler.filter((item) => item !== value); // Ekstra malzeme ekleme/çıkarma
+            : prevData.secimler.filter((item) => item !== value);
           return { ...prevData, secimler: updatedSecimler };
         }
       }
-      return { ...prevData, [name]: value }; // Diğer inputlar için formData güncellemesi
+      return { ...prevData, [name]: value };
     });
   };
 
-  // Form doğrulama fonksiyonu
   const validateForm = () => {
-    const newErrors = {}; // Hata mesajlarını tutacak nesne
+    const newErrors = {};
 
-    // Zorunlu alanlar ve doğrulama
     if (!formData.boySecim) {
       newErrors.boyut = "Bir boyut seçmelisiniz.";
     }
+
     if (!formData.kalinlikSecim) {
       newErrors.hamur = "Hamur kalınlığı seçmelisiniz.";
     }
+
     if (formData.secimler.length < 3) {
       newErrors.ekstralar = "En az 3 malzeme seçmelisiniz.";
     }
+
     if (!formData.siparisNotu) {
       newErrors.siparisNotu = "Sipariş notu boş bırakılamaz.";
     } else if (formData.siparisNotu.length < 5) {
       newErrors.siparisNotu = "Sipariş notu en az 5 karakter olmalıdır.";
     }
 
-    setErrors(newErrors); // Hata mesajlarını güncelle
-    setIsValid(Object.keys(newErrors).length === 0); // Form geçerli mi kontrolü
+    setErrors(newErrors);
+    setIsValid(Object.keys(newErrors).length === 0);
   };
 
-  // FormData veya count değiştiğinde doğrulama yapılır
   useEffect(() => {
     validateForm();
   }, [formData, count]);
 
-  // Sipariş sayısını azaltma
   const decrement = (e) => {
     e.preventDefault();
     count > 1 ? setCount(count - 1) : setCount(1);
   };
 
-  // Sipariş sayısını artırma
   const increment = (e) => {
     e.preventDefault();
     setCount(count + 1);
   };
 
-  // Form gönderildiğinde yapılacak işlemler
   const handleSubmit = (event) => {
     event.preventDefault();
 
     if (isValid) {
-      // Form geçerliyse sipariş verilir
       axios
         .post("https://reqres.in/api/pizza", formData)
         .then((response) => {
           toast.success("Sipariş başarılıyla alındı, afiyet olsun");
-          history.push("/siparis-onayi"); // Sipariş onayı sayfasına yönlendir
+          history.push("/siparis-onayi");
         })
         .catch((error) => {
           toast.error("Bir hata oluştu, lütfen tekrar deneyin.");
@@ -95,24 +87,27 @@ function SiparisFormu({ formData, setFormData, count, setCount }) {
   return (
     <div className="bg-secondary p-ts reset-padding">
       <div className="container-md flex-col gap-s barlow">
-        <h2>{puan.isim}</h2> {/* Puan ismi */}
+        <h2>{puan.isim}</h2>
         <div className="flex between">
-          <p className="pricetag">{formData.fiyat} TL</p> {/* Fiyat bilgisi */}
+          <p className="pricetag">{formData.fiyat} TL</p>
           <div className="flex gap-m review">
             <div>
-              <p>⭐ ({puan.p})</p> {/* Yıldız puanı */}
+              <p>⭐ ({puan.p})</p>
             </div>
             <div>
-              <p>🗨 ({puan.com})</p> {/* Yorum sayısı */}
+              <p>🗨 ({puan.com})</p>
             </div>
           </div>
         </div>
         <article className="article">
-          {/* Ürün açıklaması */}
-          Frontend Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre...
+          Frontend Dev olarak hala position:absolute kullanıyorsan bu çok acı
+          pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli
+          diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun
+          ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak,
+          düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli
+          lezzetli bir yemektir. Küçük bir pizzaya bazen pizzetta denir.
         </article>
         <form className="barlow flex-col between" onSubmit={handleSubmit}>
-          {/* Boyut Seçimi */}
           <div className="flex between margin-bottom">
             <div className="flex-col gap-s">
               <h3 className="margin-bottom">
@@ -130,10 +125,9 @@ function SiparisFormu({ formData, setFormData, count, setCount }) {
                   {boyut.boy}
                 </label>
               ))}
-              {errors.boyut && <p style={{ color: "red" }}>{errors.boyut}</p>} {/* Hata mesajı */}
+              {errors.boyut && <p style={{ color: "red" }}>{errors.boyut}</p>}
             </div>
 
-            {/* Hamur Kalınlığı Seçimi */}
             <div>
               <label htmlFor="hamur" className="flex-col">
                 <h3 className="margin-bottom">
@@ -154,11 +148,10 @@ function SiparisFormu({ formData, setFormData, count, setCount }) {
                   ))}
                 </select>
               </label>
-              {errors.hamur && <p style={{ color: "red" }}>{errors.hamur}</p>} {/* Hata mesajı */}
+              {errors.hamur && <p style={{ color: "red" }}>{errors.hamur}</p>}
             </div>
           </div>
 
-          {/* Ekstra Malzeme Seçimi */}
           <div>
             <h2>Ek Malzemeler</h2>
             <p className="margin-bottom">
@@ -177,17 +170,18 @@ function SiparisFormu({ formData, setFormData, count, setCount }) {
                       name="secimler"
                       value={ekstra.name}
                       onChange={handleChange}
-                      disabled={formData.secimler.length >= 10} // 10'dan fazla malzeme seçilemez
+                      disabled={formData.secimler.length >= 10}
                     />
                     {ekstra.name}
                   </label>
                 </div>
               ))}
             </div>
-            {errors.ekstralar && <p style={{ color: "red" }}>{errors.ekstralar}</p>} {/* Hata mesajı */}
+            {errors.ekstralar && (
+              <p style={{ color: "red" }}>{errors.ekstralar}</p>
+            )}
           </div>
 
-          {/* Sipariş Notu */}
           <div className="flex-col margin-bottom-lg">
             <label htmlFor="siparisNotu">
               <h3>Sipariş Notu:</h3>
@@ -205,11 +199,11 @@ function SiparisFormu({ formData, setFormData, count, setCount }) {
               cols={5}
               rows={4}
             />
-            {errors.siparisNotu && <p style={{ color: "red" }}>{errors.siparisNotu}</p>} {/* Hata mesajı */}
+            {errors.siparisNotu && (
+              <p style={{ color: "red" }}>{errors.siparisNotu}</p>
+            )}
           </div>
-
           <hr />
-          {/* Acil Teslimat Seçeneği */}
           <label className="flex gap-s semi-bold padding-s">
             <input
               type="checkbox"
@@ -222,8 +216,6 @@ function SiparisFormu({ formData, setFormData, count, setCount }) {
           </label>
 
           <hr className="margin-bottom-lg" />
-
-          {/* Sipariş Sayısı ve Toplam Fiyat */}
           <div className="flex between">
             <div className="buton-div">
               <button className="buton" onClick={decrement}>
@@ -255,7 +247,7 @@ function SiparisFormu({ formData, setFormData, count, setCount }) {
                 <button
                   type="submit"
                   className="buton semi-bold black padding-s"
-                  disabled={!isValid} // Form geçerli değilse buton disabled olur
+                  disabled={!isValid}
                 >
                   SİPARİŞ VER
                 </button>
@@ -267,5 +259,4 @@ function SiparisFormu({ formData, setFormData, count, setCount }) {
     </div>
   );
 }
-
 export default SiparisFormu;

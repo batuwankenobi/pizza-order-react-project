@@ -1,300 +1,306 @@
-/* Genel stiller */
-
 .header {
     color: white;
-    /* Yazı rengi beyaz */
     font-family: "Roboto Condensed";
-    /* Font ailesi */
     padding: 1rem;
-    /* İçerik etrafında boşluk */
     text-decoration: none;
-    /* Alt çizgiyi kaldır */
     &:hover {
         text-decoration: underline;
-        /* Hover sırasında alt çizgi */
         transition-duration: 1s;
-        /* Geçiş süresi */
     }
 }
-
-
-/* Hero bölümünün stilleri */
 
 .hero-section {
     background-image: url(/home-banner.png);
-    /* Arka plan resmi */
     background-size: cover;
-    /* Arka plan resmi ekranı kaplayacak şekilde ayarlanır */
     background-repeat: no-repeat;
-    /* Arka plan resmi tekrarlanmaz */
     background-position: center;
-    /* Arka plan resmi merkezlenir */
     min-width: 375px;
-    /* Minimum genişlik */
     min-height: 600px;
-    /* Minimum yükseklik */
     display: flex;
-    /* Flexbox düzeni */
     align-items: center;
-    /* Yatayda ortalama */
     flex-direction: column;
-    /* Dikeyde kolon düzeni */
+    align-items: center;
     width: 100vw;
-    /* Ekranın tamamını kapsar */
     height: 100vh;
-    /* Ekranın tamamını kapsar */
-    /* İçerik stilleri */
     p {
         font-family: "Satisfy";
-        /* Yazı tipi */
         font-weight: 400;
-        /* Yazı kalınlığı */
         font-size: 2rem;
-        /* Yazı boyutu */
         text-align: center;
-        /* Metni ortalar */
         color: #fdc913;
-        /* Yazı rengi */
     }
     h1 {
         font-family: "Londrina Solid";
-        /* Yazı tipi */
         font-weight: 400;
-        /* Yazı kalınlığı */
         font-size: 3rem;
-        /* Yazı boyutu */
         text-align: center;
-        /* Metni ortalar */
         color: white;
-        /* Yazı rengi */
     }
     h2 {
         font-family: "Roboto Condensed";
-        /* Yazı tipi */
         font-weight: 300;
-        /* Yazı kalınlığı */
         font-size: 5.3rem;
-        /* Yazı boyutu */
         text-align: center;
-        /* Metni ortalar */
         color: white;
-        /* Yazı rengi */
         line-height: 6rem;
-        /* Satır yüksekliği */
         letter-spacing: 1.5px;
-        /* Harfler arasındaki boşluk */
     }
     button {
         font-family: "Barlow";
-        /* Yazı tipi */
         font-weight: 600;
-        /* Yazı kalınlığı */
         font-size: 1rem;
-        /* Yazı boyutu */
         text-align: center;
-        /* Metni ortalar */
         padding: 0.5rem 2.5rem;
-        /* Düğme içi boşluk */
         border-radius: 25px;
-        /* Yuvarlak köşeler */
         border: none;
-        /* Kenarlık yok */
         background-color: #fdc913;
-        /* Arka plan rengi */
     }
 }
-
-
-/* Flexbox merkezi hizalama */
 
 .flex-center {
     display: flex;
     justify-content: center;
-    /* Yatayda ortalama */
 }
-
-
-/* Hero bölümünün alt kısmına margin ekler */
 
 .mt-m {
     margin-top: 2.5rem;
 }
 
+.barlow {
+    font-family: "Barlow";
+}
 
-/* Flexbox düzeni için kolonlar */
+.none {
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.article {
+    color: #5f5f5f;
+    font-family: "Barlow";
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 2rem;
+}
+
+.pricetag {
+    color: #5f5f5f;
+    font-weight: 700;
+    font-size: 1.7rem;
+}
+
+.review {
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #5f5f5f;
+    font-family: "Barlow";
+    margin: 1rem 0;
+}
+
+h3 {
+    font-size: 1.3rem;
+    color: #5f5f5f;
+    font-family: "Barlow";
+    margin: 1rem 0;
+}
+
+.bg-main {
+    background: #ce2829;
+    width: 100vw;
+    height: 100vh;
+}
+
+.bg-secondary {
+    background: #faf7f2;
+    width: 100vw;
+}
 
 .flex-col {
     display: flex;
     flex-direction: column;
 }
 
-
-/* Farklı container genişlikleri */
+.flex {
+    display: flex;
+}
 
 .container-lg {
     max-width: 960px;
-    /* Maksimum genişlik */
     margin: 0 auto;
-    /* Ortalar */
 }
 
 .container-md {
     max-width: 720px;
-    /* Maksimum genişlik */
     margin: 0 auto;
-    /* Ortalar */
 }
 
 .container-s {
     max-width: 480px;
-    /* Maksimum genişlik */
     margin: 0 auto;
-    /* Ortalar */
 }
 
 .container-l {
     max-width: 960px;
-    /* Maksimum genişlik */
 }
 
-
-/* Gap (boşluk) stilleri */
+.p-ts {
+    padding: 1rem;
+}
 
 .gap-s {
     gap: 1rem;
-    /* Küçük boşluk */
 }
 
 .gap-m {
     gap: 2rem;
-    /* Orta büyüklükte boşluk */
 }
 
 .gap-l {
     gap: 5rem;
-    /* Büyük boşluk */
 }
 
+.between {
+    justify-content: space-between;
+}
 
-/* Buton stilleri */
+.margin-bottom-zero {
+    margin-bottom: 0;
+}
+
+.margin-bottom {
+    margin-bottom: 1rem;
+}
+
+.margin-bottom-lg {
+    margin-bottom: 2rem;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 230px);
+    justify-items: start;
+}
+
+.grid-item {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.semi-bold {
+    font-weight: 500;
+}
 
 .buton-div {
     display: flex;
     align-items: baseline;
-    /* İçeriği hizala */
     gap: 10px;
-    /* Elemanlar arasındaki boşluk */
     border-radius: 5px;
-    /* Yuvarlak köşeler */
 }
 
 .buton {
     background-color: #fdc913;
-    /* Arka plan rengi */
     color: #faf7f2;
-    /* Yazı rengi */
     border: none;
-    /* Kenarlık yok */
     border-radius: 5px;
-    /* Yuvarlak köşeler */
     padding: 0.5rem 1rem;
-    /* Düğme içi boşluk */
     font-size: 1rem;
-    /* Yazı boyutu */
     font-weight: 600;
-    /* Yazı kalınlığı */
     cursor: pointer;
-    /* İmleç işareti */
     transition: background-color 0.3s;
-    /* Geçiş efekti */
     color: #5f5f5f;
-    /* Yazı rengi */
 }
 
-
-/* Sipariş bilgisi container'ı */
+.counter {
+    background: none;
+    align-content: center;
+    text-align: center;
+    width: 1rem;
+}
 
 .order-container {
     border: 1px solid #5f5f5f;
-    /* Kenarlık */
     border-radius: 5px;
-    /* Yuvarlak köşeler */
     min-width: 350px;
-    /* Minimum genişlik */
 }
 
 .padding-s {
     padding: 1rem;
-    /* İç boşluk */
 }
-
-
-/* Başlık renkleri */
 
 .black {
     color: #292929;
-    /* Siyah renk */
-}
-
-
-/* Metin hizalama */
-
-.text-center {
-    margin: 0 auto;
-    /* Ortalar */
 }
 
 .text-left {
     margin: 0;
-    /* Solda hizala */
 }
 
+.text-center {
+    margin: 0 auto;
+}
 
-/* Order (sipariş) arka planı */
+.reset-margin {
+    margin: 0;
+}
+
+.reset-padding {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.header-link {
+    color: #faf7f2;
+    text-decoration: none;
+    font-family: "Barlow";
+}
+
+.white {
+    color: #faf7f2;
+}
 
 .order-bg {
     background-color: rgba(253, 201, 19, 0.8);
-    /* Yarı saydam sarı arka plan */
     padding: 1rem 3rem;
-    /* İç boşluk */
     border-radius: 10px;
-    /* Yuvarlak köşeler */
 }
-
-
-/* Strong (vurgulu) metin stilleri */
 
 strong {
     font-weight: 700;
-    /* Kalın yazı */
     color: rgb(11, 129, 1);
-    /* Yeşil renk */
     font-family: "Barlow";
-    /* Yazı tipi */
     font-size: 1.2rem;
-    /* Yazı boyutu */
 }
 
-
-/* Fiyat etiketinin stilleri */
-
-.pricetag {
-    color: #5f5f5f;
-    /* Renk */
-    font-weight: 700;
-    /* Kalın yazı */
-    font-size: 1.7rem;
-    /* Yazı boyutu */
+.bigger {
+    font-size: 1.2rem;
 }
 
+h4 {
+    font-size: 2rem;
+    text-align: end;
+}
 
-/* Siparişin toplam tutarını vurgulayan stiller */
+.big {
+    font-size: 2rem;
+}
 
 .deli {
     font-size: 1.3rem;
-    /* Yazı boyutu */
     color: #ce2829;
-    /* Kırmızı renk */
     text-align: end;
-    /* Sağ hizala */
 }
