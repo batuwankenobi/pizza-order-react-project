@@ -7,6 +7,8 @@ import {
 import Home from "./pages/Home";
 import Order from "./pages/Order";
 import Assent from "./pages/Assent";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 function App() {
