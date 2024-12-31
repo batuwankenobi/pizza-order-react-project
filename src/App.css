@@ -1,306 +1,59 @@
-.header {
-    color: white;
-    font-family: "Roboto Condensed";
-    padding: 1rem;
-    text-decoration: none;
-    &:hover {
-        text-decoration: underline;
-        transition-duration: 1s;
-    }
-}
-
-.hero-section {
-    background-image: url(/home-banner.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-width: 375px;
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    p {
-        font-family: "Satisfy";
-        font-weight: 400;
-        font-size: 2rem;
-        text-align: center;
-        color: #fdc913;
-    }
-    h1 {
-        font-family: "Londrina Solid";
-        font-weight: 400;
-        font-size: 3rem;
-        text-align: center;
-        color: white;
-    }
-    h2 {
-        font-family: "Roboto Condensed";
-        font-weight: 300;
-        font-size: 5.3rem;
-        text-align: center;
-        color: white;
-        line-height: 6rem;
-        letter-spacing: 1.5px;
-    }
-    button {
-        font-family: "Barlow";
-        font-weight: 600;
-        font-size: 1rem;
-        text-align: center;
-        padding: 0.5rem 2.5rem;
-        border-radius: 25px;
-        border: none;
-        background-color: #fdc913;
-    }
-}
-
-.flex-center {
-    display: flex;
-    justify-content: center;
-}
-
-.mt-m {
-    margin-top: 2.5rem;
-}
-
-.barlow {
-    font-family: "Barlow";
-}
-
-.none {
-    text-decoration: none;
-    &:hover {
-        text-decoration: none;
-    }
-}
-
-.article {
-    color: #5f5f5f;
-    font-family: "Barlow";
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 2rem;
-}
-
-.pricetag {
-    color: #5f5f5f;
-    font-weight: 700;
-    font-size: 1.7rem;
-}
-
-.review {
-    font-weight: 400;
-    font-size: 1rem;
-}
-
-h1 {
-    font-size: 3rem;
-    font-weight: 700;
-}
-
-h2 {
-    font-size: 1.5rem;
-    color: #5f5f5f;
-    font-family: "Barlow";
-    margin: 1rem 0;
-}
-
-h3 {
-    font-size: 1.3rem;
-    color: #5f5f5f;
-    font-family: "Barlow";
-    margin: 1rem 0;
-}
-
-.bg-main {
-    background: #ce2829;
-    width: 100vw;
-    height: 100vh;
-}
-
-.bg-secondary {
-    background: #faf7f2;
-    width: 100vw;
-}
-
-.flex-col {
-    display: flex;
-    flex-direction: column;
-}
-
-.flex {
-    display: flex;
-}
-
-.container-lg {
-    max-width: 960px;
+#root {
+    max-width: 1280px;
+    /* Maksimum genişlik 1280px ile sınırlı */
     margin: 0 auto;
-}
-
-.container-md {
-    max-width: 720px;
-    margin: 0 auto;
-}
-
-.container-s {
-    max-width: 480px;
-    margin: 0 auto;
-}
-
-.container-l {
-    max-width: 960px;
-}
-
-.p-ts {
-    padding: 1rem;
-}
-
-.gap-s {
-    gap: 1rem;
-}
-
-.gap-m {
-    gap: 2rem;
-}
-
-.gap-l {
-    gap: 5rem;
-}
-
-.between {
-    justify-content: space-between;
-}
-
-.margin-bottom-zero {
-    margin-bottom: 0;
-}
-
-.margin-bottom {
-    margin-bottom: 1rem;
-}
-
-.margin-bottom-lg {
-    margin-bottom: 2rem;
-}
-
-.wrap {
-    flex-wrap: wrap;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 230px);
-    justify-items: start;
-}
-
-.grid-item {
+    /* Yatayda ortalanmış */
+    padding: 2rem;
+    /* İçeride 2rem'lik boşluk bırakılır */
     text-align: center;
-    margin-bottom: 10px;
+    /* Metin ortalanır */
 }
 
-.semi-bold {
-    font-weight: 500;
+.logo {
+    height: 6em;
+    /* Logo yüksekliği 6em */
+    padding: 1.5em;
+    /* Logo etrafında 1.5em'lik iç boşluk */
+    will-change: filter;
+    /* Animasyonun optimizasyonu için filtre değişimi bekleniyor */
+    transition: filter 300ms;
+    /* Filtre değişimi için 300ms'lik geçiş efekti */
 }
 
-.buton-div {
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-    border-radius: 5px;
+.logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+    /* Hover durumunda logo etrafında mavi renkli gölge efekti */
 }
 
-.buton {
-    background-color: #fdc913;
-    color: #faf7f2;
-    border: none;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    color: #5f5f5f;
+.logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+    /* React logosu üzerinde hover durumu, mavi tonunda bir gölge efekti */
 }
 
-.counter {
-    background: none;
-    align-content: center;
-    text-align: center;
-    width: 1rem;
+@keyframes logo-spin {
+    from {
+        transform: rotate(0deg);
+        /* Başlangıçta 0 derece döner */
+    }
+    to {
+        transform: rotate(360deg);
+        /* 360 derece döner */
+    }
 }
 
-.order-container {
-    border: 1px solid #5f5f5f;
-    border-radius: 5px;
-    min-width: 350px;
+@media (prefers-reduced-motion: no-preference) {
+    a:nth-of-type(2) .logo {
+        animation: logo-spin infinite 20s linear;
+        /* İkinci linkteki logo sürekli döner, 20 saniyede bir döngü tamamlanır */
+    }
 }
 
-.padding-s {
-    padding: 1rem;
+.card {
+    padding: 2em;
+    /* Kart içinde 2em'lik iç boşluk bırakılır */
 }
 
-.black {
-    color: #292929;
-}
-
-.text-left {
-    margin: 0;
-}
-
-.text-center {
-    margin: 0 auto;
-}
-
-.reset-margin {
-    margin: 0;
-}
-
-.reset-padding {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.header-link {
-    color: #faf7f2;
-    text-decoration: none;
-    font-family: "Barlow";
-}
-
-.white {
-    color: #faf7f2;
-}
-
-.order-bg {
-    background-color: rgba(253, 201, 19, 0.8);
-    padding: 1rem 3rem;
-    border-radius: 10px;
-}
-
-strong {
-    font-weight: 700;
-    color: rgb(11, 129, 1);
-    font-family: "Barlow";
-    font-size: 1.2rem;
-}
-
-.bigger {
-    font-size: 1.2rem;
-}
-
-h4 {
-    font-size: 2rem;
-    text-align: end;
-}
-
-.big {
-    font-size: 2rem;
-}
-
-.deli {
-    font-size: 1.3rem;
-    color: #ce2829;
-    text-align: end;
+.read-the-docs {
+    color: #888;
+    /* 'Read the docs' metninin rengi gri tonlarında ayarlanır */
 }
