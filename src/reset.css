@@ -1,4 +1,5 @@
-/* 1. Use a more-intuitive box-sizing model */
+/* Tüm elemanların ve pseudo-elemanların (before, after) box modelini border-box olarak ayarlıyoruz. 
+   Bu, padding ve border'ın elemanın toplam genişliğine dahil edilmesini sağlar. */
 
 *,
 *::before,
@@ -7,21 +8,25 @@
 }
 
 
-/* 2. Remove default margin */
+/* Tüm elemanların varsayılan margin değerlerini sıfırlıyoruz. 
+      Bu, tarayıcıların varsayılan stilinden kaynaklanan boşlukları ortadan kaldırır. */
 
 * {
     margin: 0;
 }
 
+
+/* Gövdeye satır yüksekliği ve yazı tipinin düzgün görünmesi için özellikler ekliyoruz. 
+      -webkit-font-smoothing, metinlerin daha keskin görünmesini sağlar. */
+
 body {
-    /* 3. Add accessible line-height */
     line-height: 1.5;
-    /* 4. Improve text rendering */
     -webkit-font-smoothing: antialiased;
 }
 
 
-/* 5. Improve media defaults */
+/* Görseller ve diğer medya öğeleri için responsive davranış sağlıyoruz. 
+      Genişliklerini %100 ile sınırlayıp görüntü taşımasını engelliyoruz. */
 
 img,
 picture,
@@ -33,7 +38,7 @@ svg {
 }
 
 
-/* 6. Inherit fonts for form controls */
+/* Form elemanlarının yazı tipini genel yazı tipine uyumlu hale getiriyoruz. */
 
 input,
 button,
@@ -43,7 +48,8 @@ select {
 }
 
 
-/* 7. Avoid text overflows */
+/* Paragraf ve başlık elemanlarının metinlerini kırılabilir hale getiriyoruz. 
+      Böylece uzun metinler taşmadan yeni satıra geçer. */
 
 p,
 h1,
@@ -56,25 +62,8 @@ h6 {
 }
 
 
-/* 8. Improve line wrapping */
-
-p {
-    text-wrap: pretty;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    text-wrap: balance;
-}
-
-
-/*
-    9. Create a root stacking context
-  */
+/* Uygulamanın kök elementlerini izole ediyoruz. 
+      Bu, z-index gibi özelliklerin diğer elementlerden etkilenmesini engeller. */
 
 #root,
 #__next {
