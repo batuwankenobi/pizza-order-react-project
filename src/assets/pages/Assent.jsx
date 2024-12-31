@@ -32,4 +32,32 @@ export default function Assent() {
 			  
 			  {/* Pizza adı */}
 			  <p className="pizzaName">Position Absolute Acı Pizza</p>
-				
+				   {/* Sipariş detayları */}
+				   <div className="order-detail">
+                    <p>Ad-Soyad: {formData.name}</p>
+                    <p>Boyut: {formData.size.value}</p>
+                    <p>Hamur: {formData.dough.value}</p>
+                    <p>Malzemeler: {formData.ingredients.value.join(', ')}</p>
+                    <p>Not: {formData.note}</p>
+                    <p>Adet: {formData.quantity}</p>
+                </div>
+
+                {/* Ödeme bilgisi ve toplam tutar */}
+                <div className='payment'>
+                    <p>Sipariş Toplamı</p>
+                    <div className='chooser'>
+                        <p>Seçimler:</p>
+                        <span>{choose} &#8378;</span> {/* Seçimlerin toplam maliyeti */}
+                    </div>
+                    <div className='totals'>
+                        <p>Toplam:</p>
+                        <span>{total} &#8378;</span> {/* Toplam tutar */}
+                    </div>
+                </div>
+            </div>
+
+            {/* Sayfanın alt kısmını dahil ediyoruz */}
+            <Footers />
+        </>
+    );
+}
