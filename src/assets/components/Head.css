@@ -1,0 +1,16 @@
+.head {
+    height: 138px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+    background-color: #CE2829;
+}
+
+.teknyemekler {
+    width: 20rem;
+    height: auto;
+    margin: 3.5rem;
+}
