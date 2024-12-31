@@ -1,23 +1,26 @@
 import React from "react";
 import {
   BrowserRouter as Router,
-  Routes,
+  Switch,
   Route,
 } from "react-router-dom";
 import Home from "./pages/Home";
 import Order from "./pages/Order";
 import Assent from "./pages/Assent";
 
+
 function App() {
+
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/order" element={<Order />} />
-        <Route path="/success" element={<Assent />} />
-      </Routes>
+      <Switch>
+        <Route exact path="/"><Home /></Route>
+        <Route path="/order"><Order /></Route>
+        <Route path="/success"><Assent /></Route>
+      </Switch>
     </Router>
-  );
+
+  )
 }
 
-export default App;
+export default App

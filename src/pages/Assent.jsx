@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import Head from '../components/Head';
 import Footers from '../components/Footer';
-import "../components/Success.css";
+import "../../components/Success.css";
 
 export default function Assent() {
 	// useLocation ile geçerli location state'ini alıyoruz
