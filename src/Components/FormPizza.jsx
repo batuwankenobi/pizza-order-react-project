@@ -142,7 +142,7 @@ export default function FormPizza() {
                         placeholder="İsim Soyisim"
                         onChange={handleInputChange}
                         invalid={!!formErrors.name}
-                        onFocus={() => showHappyToast("name")}
+    
                         data-cy="input-name"
                     />
                     <FormFeedback data-cy="error-name">{formErrors.name}</FormFeedback>
@@ -161,7 +161,7 @@ export default function FormPizza() {
                                         id={size}
                                         value={size}
                                         checked={data.size.value === size}
-                                        onChange={(e) => { handleSelectChange(e); showHappyToast("size"); }}
+                                        onChange={(e) => { handleSelectChange(e); }}
                                         invalid={!!formErrors.size}
                                         data-cy="input-size"
                                     />
@@ -184,7 +184,6 @@ export default function FormPizza() {
                             value={data.dough.value}
                             onChange={handleSelectChange}
                             invalid={!!formErrors.dough}
-                            onFocus={() => showHappyToast("dough")}
                             data-cy="input-dough"
                         >
                             <option value="">Hamur Kalınlığı</option>
@@ -212,7 +211,7 @@ export default function FormPizza() {
                                     id={`ingredient-${index}`}
                                     value={ingredient}
                                     checked={data.ingredients.value.includes(ingredient)}
-                                    onChange={(e) => { handleCheckboxChange(e); showHappyToast("ingredients"); }}
+                                    onChange={(e) => { handleCheckboxChange(e); }}
                                     data-cy={`input-ingredient-${ingredient}`}
                                 />
                                 <p htmlFor={`ingredient-${index}`}>{ingredient}</p>
