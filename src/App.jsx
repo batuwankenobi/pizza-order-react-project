@@ -7,7 +7,7 @@ import {
 import Home from "./pages/Home";
 import Order from "./pages/Order";
 import Assent from "./pages/Assent";
-
+import { SpeedInsights } from "@vercel/speed-insights/react"
 // Uygulama bileşeni
 function App() {
 
