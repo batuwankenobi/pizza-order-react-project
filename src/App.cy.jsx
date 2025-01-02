@@ -1,32 +1,38 @@
-import React from 'react';
-import { MemoryRouter } from 'react-router-dom';
-import App from './App';
+import React from "react";
+import App from "./App";
 
-describe('<App />', () => {
-  it('renders the home page by default', () => {
-    cy.mount(
-      <MemoryRouter initialEntries={['/src/pages/Home.jsx']}>
-        <App />
-      </MemoryRouter>
-    );
-    cy.contains('pages/Home.jsx'); // Home bileşenindeki metni doğrula
+describe("<App />", () => {
+  it("renders without crashing", () => {
+    cy.mount(<App />); // Bileşeni mount ediyoruz
+
+    // Sayfa render edildiğinde kontrol edilecek bazı içerikler
+    cy.contains("Home Page Content"); // Ana sayfadaki içerik
+    cy.contains("Order Page Content"); // Sipariş sayfasındaki içerik
+    cy.contains("Success Page Content"); // Başarılı işlem sayfasındaki içerik
   });
 
-  it('renders the order page when /order is visited', () => {
-    cy.mount(
-      <MemoryRouter initialEntries={['/order']}>
-        <App />
-      </MemoryRouter>
-    );
-    cy.contains('pages/Order.jsx'); // Order bileşenindeki metni doğrula
+  it("should navigate to the order page", () => {
+    cy.mount(<App />); // Bileşeni mount ediyoruz
+
+    // Ana sayfada "Order" sayfasına gitmek için linki tıklıyoruz
+    cy.get('a[href="/order"]').click();
+
+    // Sipariş sayfasının düzgün yüklendiğini kontrol ediyoruz
+    cy.url().should("include", "/order");
+    cy.contains("Order Page Content");
   });
 
-  it('renders the success page when /success is visited', () => {
-    cy.mount(
-      <MemoryRouter initialEntries={['/success']}>
-        <App />
-      </MemoryRouter>
-    );
-    cy.contains('pages/Assent.jsx'); // Assent bileşenindeki metni doğrula
+  it("should navigate to the success page after order", () => {
+    cy.mount(<App />); // Bileşeni mount ediyoruz
+
+    // Sipariş sayfasına gidiyoruz
+    cy.get('a[href="/order"]').click();
+
+    // Sipariş işlemi sonrası başarı sayfasına gitmeyi simüle ediyoruz
+    cy.get('a[href="/success"]').click();
+
+    // Başarı sayfasının düzgün yüklendiğini kontrol ediyoruz
+    cy.url().should("include", "/success");
+    cy.contains("Success Page Content");
   });
 });
