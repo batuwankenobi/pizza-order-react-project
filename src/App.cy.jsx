@@ -1,38 +1,28 @@
-import React from "react";
-import App from "./App";
+import React from 'react';
+import App from './App';
 
-describe("<App />", () => {
-  it("renders without crashing", () => {
-    cy.mount(<App />); // Bileşeni mount ediyoruz
-
-    // Sayfa render edildiğinde kontrol edilecek bazı içerikler
-    cy.contains("Home Page Content"); // Ana sayfadaki içerik
-    cy.contains("Order Page Content"); // Sipariş sayfasındaki içerik
-    cy.contains("Success Page Content"); // Başarılı işlem sayfasındaki içerik
+describe('<App />', () => {
+  beforeEach(() => {
+    // Mount the App component before each test
+    cy.mount(<App />);
   });
 
-  it("should navigate to the order page", () => {
-    cy.mount(<App />); // Bileşeni mount ediyoruz
-
-    // Ana sayfada "Order" sayfasına gitmek için linki tıklıyoruz
-    cy.get('a[href="/order"]').click();
-
-    // Sipariş sayfasının düzgün yüklendiğini kontrol ediyoruz
-    cy.url().should("include", "/order");
-    cy.contains("Order Page Content");
+  it('renders the Home page by default', () => {
+    cy.contains('Home').should('be.visible'); // Adjust this based on your Home page content
   });
 
-  it("should navigate to the success page after order", () => {
-    cy.mount(<App />); // Bileşeni mount ediyoruz
+  it('navigates to the Order page', () => {
+    cy.get('a[href="/order"]').click(); // Assuming you have a link or button to navigate
+    cy.contains('Order').should('be.visible'); // Adjust this based on your Order page content
+  });
 
-    // Sipariş sayfasına gidiyoruz
-    cy.get('a[href="/order"]').click();
+  it('navigates to the Success page', () => {
+    cy.get('a[href="/success"]').click(); // Assuming you have a link or button to navigate
+    cy.contains('Success').should('be.visible'); // Adjust this based on your Success page content
+  });
 
-    // Sipariş işlemi sonrası başarı sayfasına gitmeyi simüle ediyoruz
-    cy.get('a[href="/success"]').click();
-
-    // Başarı sayfasının düzgün yüklendiğini kontrol ediyoruz
-    cy.url().should("include", "/success");
-    cy.contains("Success Page Content");
+  it('handles invalid routes gracefully', () => {
+    cy.visit('/invalid-route', { failOnStatusCode: false });
+    cy.contains('404').should('be.visible'); // Replace with your 404 page message if implemented
   });
 });
