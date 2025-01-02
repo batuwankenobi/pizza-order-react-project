@@ -9,7 +9,7 @@ describe('<App />', () => {
         <App />
       </MemoryRouter>
     );
-    cy.contains('Home'); // Home bileşenindeki metni doğrula
+    cy.contains('pages/Home.jsx'); // Home bileşenindeki metni doğrula
   });
 
   it('renders the order page when /order is visited', () => {
@@ -18,7 +18,7 @@ describe('<App />', () => {
         <App />
       </MemoryRouter>
     );
-    cy.contains('Order'); // Order bileşenindeki metni doğrula
+    cy.contains('pages/Order.jsx'); // Order bileşenindeki metni doğrula
   });
 
   it('renders the success page when /success is visited', () => {
@@ -27,6 +27,6 @@ describe('<App />', () => {
         <App />
       </MemoryRouter>
     );
-    cy.contains('Assent'); // Assent bileşenindeki metni doğrula
+    cy.contains('pages/Assent.jsx'); // Assent bileşenindeki metni doğrula
   });
 });
