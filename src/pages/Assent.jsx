@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom';
-import Head from '../components/Head';
+import Head from "../components/Head.jsx";  // veya .js;
 import Footers from '../components/Footer';
 import "../components/Success.css";
 

@@ -1,6 +1,7 @@
-import FormPizza from "../components/FormPizza";
+import FormPizza from "../Components/FormPizza.jsx";  // veya .js
+
 import OrderHeader from "../components/OrderHeader";
-import Footer from "../Components/Footer";
+import Footer from "../components/Footer";
 
 export default function Order() {
   return (
@@ -11,3 +12,5 @@ export default function Order() {
     </>
   );
 }
+
+
